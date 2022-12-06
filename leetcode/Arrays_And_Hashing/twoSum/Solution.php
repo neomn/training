@@ -20,8 +20,7 @@ class Solution {
     * @return Integer[]
     */
     function twoSum($nums, $target) {
-
-        sort($nums);
+        $nums = $this->removeAndSort($nums, $target);
         return $nums; 
     }
 }
