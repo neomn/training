@@ -1,4 +1,5 @@
 <?php
+
 class Solution {
 
     /**
@@ -9,14 +10,28 @@ class Solution {
     function twoSum($nums, $target) {
 
         sort($nums);
-        return $nums;
-        
+        return $nums; 
     }
 }
 
-$solution = new Solution;
-$nums = [15,33,13,35,10,40,5,1,88,54,18,25,22];
-$target = 47;
-var_dump( $solution->twoSum($nums, $target));
-echo 'done';
+    $nums = [15,33,13,35,10,40,5,1,88,54,18,25,22];
+    $target = 47;
+
+    // remove elements bigger than target , sort the rest elements
+    function removeAndSort($nums, $target){
+
+        foreach($nums as $index=>$num){
+            if ($num > $target)
+                unset($nums[$index]);
+        }
+        sort($nums);
+        return $nums;
+    }
+
+
+    $nums = removeAndSort($nums, $target);
+    var_dump($nums);
+
+    //$solution = new Solution;
+    //var_dump( $solution->twoSum($nums, $target));
 
