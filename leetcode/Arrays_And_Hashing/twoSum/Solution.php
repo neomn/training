@@ -4,7 +4,7 @@ class Solution {
 
 
     // remove elements bigger than target , sort the rest elements
-    function removeAndSort($nums, $target){
+    function removeElementsBiggerThanTargetAndSort($nums, $target){
 
         foreach($nums as $index=>$num){
             if ($num > $target)
@@ -20,7 +20,7 @@ class Solution {
     * @return Integer[]
     */
     function twoSum($nums, $target) {
-        $nums = $this->removeAndSort($nums, $target);
+        $nums = $this->removeElementsBiggerThanTargetAndSort($nums, $target);
         return $nums; 
     }
 }
