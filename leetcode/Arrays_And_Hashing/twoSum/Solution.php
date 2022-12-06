@@ -3,15 +3,15 @@
 class Solution {
 
 
-    // remove elements bigger than target , sort the rest elements
+    // remove elements bigger than target , sort the rest elements , array keys will be preserved
     function removeElementsBiggerThanTargetAndSort($nums, $target){
-
+        $numsWithNoBiggerElement = [];
         foreach($nums as $index=>$num){
-            if ($num > $target)
-                unset($nums[$index]);
+            if ($num < $target)
+                $numsWithNoBiggerElement[$index] = $num;
         }
-        sort($nums);
-        return $nums;
+        sort($numsWithNoBiggerElement);
+        return $numsWithNoBiggerElement;
     }
 
     /**
@@ -21,7 +21,18 @@ class Solution {
     */
     function twoSum($nums, $target) {
         $nums = $this->removeElementsBiggerThanTargetAndSort($nums, $target);
-        return $nums; 
+
+        $answer = [];
+
+        foreach($nums as $index=>$num)
+            foreach($nums as $index2=>$num2)
+                if ($index !== $index2 && $num + $num2 === $target){
+                    $answer [] = $index;
+                    $answer [] = $index2;
+                    return $answer;
+                }
+
+//        return $nums;
     }
 }
 
@@ -29,5 +40,6 @@ class Solution {
     $target = 47;
 
     $solution = new Solution;
-    var_dump( $solution->twoSum($nums, $target));
+    var_dump( $solution->removeElementsBiggerThanTargetAndSort($nums, $target));
+//    var_dump( $solution->twoSum($nums, $target));
 
