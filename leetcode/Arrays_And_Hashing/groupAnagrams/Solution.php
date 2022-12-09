@@ -21,6 +21,14 @@ class Solution
                 }
             } else $key = "";
 
+            //iterate through hashmap and compare key with existing keys in hashmap
+            $keyNotFound = true;
+            foreach (array_keys($hashmap) as $hashmapKey)
+                if ($hashmapKey === $key) {
+                    echo 'hashmap key matched -> ' . $hashmapKey . ' vs ' . $key . ' for string  ' . $str . "\n";
+                    $hashmap[$hashmapKey][] = $str;
+                    $keyNotFound = false;
+                }
         }
         return $hashmap;
     }
