@@ -29,6 +29,10 @@ class Solution
                     $hashmap[$hashmapKey][] = $str;
                     $keyNotFound = false;
                 }
+
+            // if no match found then add new key to the hashmap
+            if ($keyNotFound)
+                $hashmap[$key] = [$str];
         }
         return $hashmap;
     }
