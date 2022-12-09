@@ -40,6 +40,9 @@ class Solution
 
 $samples = [
     ["eat", "tea", "tan", "ate", "nat", "bat"],
+    [""],
+    ["a"],
+    ["",""],
 ];
 
 $solution = new Solution();
