@@ -4,6 +4,7 @@ class Solution
 {
     function groupAnagrams($strs)
     {
+        $result = [];
         foreach ($strs as $str){
             $count = array_fill(0,26,0);
             $splited_str = str_split($str);
