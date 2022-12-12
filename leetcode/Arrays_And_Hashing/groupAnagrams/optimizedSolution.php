@@ -19,15 +19,15 @@ class Solution
 
 $samples = [
     ["eat", "tea", "tan", "ate", "nat", "bat"],
-//    [""],
-//    ["a"],
-//    ["", ""],
+    [""],
+    ["a"],
+    ["", ""],
 ];
 
 $solution = new Solution();
 foreach ($samples as $sample) {
     print_r($solution->groupAnagrams($sample));
-//    echo "new sample >> ------------------------------------------- \n";
+    echo "new sample >> ------------------------------------------- \n";
 }
 
 
