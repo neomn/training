@@ -13,7 +13,7 @@ class Solution
             }
             $result[serialize($count)][] = $str;
         }
-        return ($result);
+        return $result;
     }
 }
 
