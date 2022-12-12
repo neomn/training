@@ -8,9 +8,9 @@ class Solution
         foreach ($strs as $str) {
             $count = array_fill(0, 26, 0);
             $splited_str = str_split($str);
-            foreach ($splited_str as $char) {
+            foreach ($splited_str as $char)
                 $count[ord($char) - ord('a')]++;
-            }
+
             $result[serialize($count)][] = $str;
         }
         return $result;
