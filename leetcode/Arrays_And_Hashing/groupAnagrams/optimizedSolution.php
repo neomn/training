@@ -18,4 +18,5 @@ $samples = [
 $solution = new Solution();
 foreach ($samples as $sample) {
     print_r($solution->groupAnagrams($sample));
+    echo "new sample >> ------------------------------------------- \n\n";
 }
