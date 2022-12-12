@@ -11,6 +11,7 @@ class Solution
             foreach ($splited_str as $char){
                 $count[ord($char)-ord('a')]++;
             }
+            $result[serialize($count)] = $str;
         }
     }
 }
@@ -22,11 +23,9 @@ $samples = [
     ["",""],
 ];
 
-//$solution = new Solution();
-//foreach ($samples as $sample) {
-//    print_r($solution->groupAnagrams($sample));
-//    echo "new sample >> ------------------------------------------- \n\n";
-
-print_r(ord('b')-ord('a'));
+$solution = new Solution();
+foreach ($samples as $sample) {
+    print_r($solution->groupAnagrams($sample));
+    echo "new sample >> ------------------------------------------- \n\n";
 
 
