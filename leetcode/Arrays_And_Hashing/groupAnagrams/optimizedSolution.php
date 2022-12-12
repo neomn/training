@@ -11,7 +11,7 @@ class Solution
             foreach ($splited_str as $char) {
                 $count[ord($char) - ord('a')]++;
             }
-            $result[serialize($count)] = $str;
+            $result[serialize($count)][] = $str;
         }
         return ($result);
     }
