@@ -4,7 +4,9 @@ class Solution
 {
     function groupAnagrams($strs)
     {
-
+        foreach ($strs as $str){
+               
+        }
     }
 }
 
