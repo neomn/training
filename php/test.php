@@ -1,11 +1,7 @@
 <?php
 
-#deferrence between const and define
-const NEO = 'good';
+#magic constants, constants which can has variable values
 
-// we can define constants dynamically using define method
-if (true){
-    define('STATUS','learning');
-}
-echo NEO;
-echo STATUS;
+echo __line__;
+echo "\n";
+echo __file__;
