@@ -1,5 +1,11 @@
 <?php
 
-#how to check if a constant is defined or not
-define('STATUS','learning');
-echo defined('STATUS');
+#deferrence between const and define
+const NEO = 'good';
+
+// we can define constants dynamically using define method
+if (true){
+    define('STATUS','learning');
+}
+echo NEO;
+echo STATUS;
