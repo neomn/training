@@ -1,7 +1,5 @@
 <?php
 
-echo print 'hello world   ';
-
+#how to check if a constant is defined or not
 define('STATUS','learning');
-
-echo STATUS;
+echo defined('STATUS');
