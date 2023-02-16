@@ -1,3 +1,7 @@
 <?php
 
-echo print 'hello world';
+echo print 'hello world   ';
+
+define('STATUS','learning');
+
+echo STATUS;
