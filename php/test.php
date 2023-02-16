@@ -1,7 +1,8 @@
 <?php
 
-#magic constants, constants which can has variable values
+#variable variable
 
-echo __line__;
-echo "\n";
-echo __file__;
+$name = 'Neo';
+$$name = 'unstoppable';
+
+echo $Neo;
