@@ -1,8 +1,11 @@
 <?php
 
-#variable variable
+# strict and type hint mode
 
-$name = 'Neo';
-$$name = 'unstoppable';
+declare(strict_types=1); // this will disable automatic type casting in php
 
-echo $Neo;
+function sum(int $x, int $y){
+    echo $x+$y;
+}
+
+sum('4.4',3);
