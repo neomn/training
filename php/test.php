@@ -1,11 +1,12 @@
 <?php
 
-# strict and type hint mode
+# some points about integers
 
-declare(strict_types=1); // this will disable automatic type casting in php
+$x = 0b1010; //binary
+//$y = 0✕2A;  //hexa decimal
+$z = 055;  //octal
 
-function sum(int $x, int $y){
-    echo $x+$y;
-}
+echo $x. "\n";
+//echo $y. "\n";
+echo $z. "\n";
 
-sum('4.4',3);
