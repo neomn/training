@@ -1,12 +1,7 @@
 <?php
 
-# some points about integers
+# some points about floats
 
-$x = 0b1010; //binary
-//$y = 0✕2A;  //hexa decimal
-$z = 055;  //octal
+echo floor(5);
 
-echo $x. "\n";
-//echo $y. "\n";
-echo $z. "\n";
 
