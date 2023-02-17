@@ -1,12 +1,23 @@
 <?php
 
-# some points about floats
+# some points about strings
 
-echo floor(5.4) . "\n";
-echo ceil(5.4) . "\n";
+//heredoc
+$x = <<< text
+this 
+is x
+string
+text;
 
-echo ceil((0.1 + 0.2) * 10) . "\n"; // result=3 might be expected but it is 4
 
-// never compare floats like float x == float y 
+//nowdoc
+$y = <<< 'text'
+this 
+is y
+string
+text;
+
+echo nl2br($x);
+echo nl2br($y);
 
 
