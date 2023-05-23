@@ -7,6 +7,12 @@ func main() {
   var lastName = "nik"
   var output string
   output = neo + lastName
+  noVar:= "declareing var without using var"
   fmt.Println(output)
+  fmt.Println(noVar)
+
+  age1 := 20
+  age2 := 30
+  fmt.Println(age1, age2)
 }
 
