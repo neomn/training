@@ -2,6 +2,11 @@ package main // a custom package name
 import "fmt"
 
 func main() { 
-  fmt.println('hellow world')
+  fmt.Println("hellow world")
+  var neo string = "my name is neo"
+  var lastName = "nik"
+  var output string
+  output = neo + lastName
+  fmt.Println(output)
 }
 
