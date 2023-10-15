@@ -13,7 +13,6 @@ print( compare_digest(plaintext_original, plaintext_recovered))
 # encrypt a message using private key and verify private key signature using public key 
 message = b"hi there"
 public_key, secret_key = generate_keypair()
-
 signature = sign(secret_key, message)
 print(verify(public_key, b"hi there", signature))
 
