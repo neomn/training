@@ -1,0 +1,74 @@
+---
+- name: Remove unofficial docker packages
+  apt:
+    name:
+      - docker.io
+      - docker-doc
+      - docker-compose
+      - podman-docker
+      - containerd
+      - runc
+    state: absent  
+
+- name: Install docker dependency packages
+  apt:
+    update_cache: true
+    name:
+      - ca-certificates
+      - curl
+      - gnupg
+    state: present
+
+- name: Create the keyrings directory
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: add docker gpg signing key
+  apt_key:
+    url: https://download.docker.com/linux/debian/gpg 
+    state: present
+
+- name: Set permissions for Docker GPG key
+  file:
+    path: /etc/apt/keyrings/docker.gpg
+    mode: '0644'
+
+- name: add docker repository to apt
+  apt_repository:
+    repo: "deb [arch=\"$(dpkg --print-architecture)\" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu/dist/{{ . /etc/os-release && echo $VERSION_CODENAME }} stable"  
+    state: present
+
+- name: update repository cache
+  apt: 
+    update_cache: yes
+   
+- name: Install Docker engine packages
+  apt:
+    update_cache: true
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+    state: present     
+
+- name: add current user to docker group 
+  shell: |
+    sudo usermod -aG docker $USER
+
+# this 3 steps are for updating ansible membership in the docker group 
+- name: switch to the root user
+  become: yes
+  become_user: root
+  command: whoami
+
+- name: switch back to previous user
+  become: yes
+  become_user: "{{ $USER }}"
+  command: whoami
+
+- name: Reset connection to refresh groups
+  meta: reset_connection

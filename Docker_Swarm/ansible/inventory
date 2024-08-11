@@ -1,0 +1,13 @@
+
+node1    ansible_host=37.32.30.25        ansible_user=ubuntu
+node2    ansible_host=188.213.196.108    ansible_user=ubuntu 
+node3    ansible_host=188.213.196.13     ansible_user=ubuntu
+node4    ansible_host=188.213.197.218    ansible_user=ubuntu
+
+[master]
+node1
+node2
+
+[worker]
+node3
+node4
